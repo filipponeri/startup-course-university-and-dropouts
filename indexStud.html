@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Startup Foundations for university graduates, students, and dropouts — 5-Session Intensive</title>
+  <meta id="page-meta" name="description" content="A free 10-hour intensive workshop for university graduates, students, and dropouts. Five weekly sessions. One draft YC application.">
+  <style>
+    :root {
+      --navy:   #1a3a7a;
+      --amber:  #d4900a;
+      --amber-light: #fef3dc;
+      --text:   #1a1a1a;
+      --muted:  #555;
+      --border: #ddd;
+      --bg:     #fafafa;
+      --white:  #ffffff;
+      --radius: 6px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 17px;
+      line-height: 1.65;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    a { color: var(--navy); }
+    a:hover { text-decoration: underline; }
+
+    /* ── Nav ── */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-logo {
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--navy);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+    .nav-cta {
+      background: var(--navy);
+      color: var(--white);
+      text-decoration: none;
+      padding: 8px 18px;
+      border-radius: var(--radius);
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .nav-cta:hover { background: #142e63; text-decoration: none; }
+
+    /* ── Layout ── */
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    section { padding: 4rem 0; }
+    section + section { border-top: 1px solid var(--border); }
+
+    h1 { font-size: 2.4rem; line-height: 1.2; font-weight: 800; letter-spacing: -0.03em; color: var(--navy); }
+    h2 { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em; color: var(--navy); margin-bottom: 1.2rem; }
+    h3 { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 0.4rem; }
+    p  { margin-bottom: 1rem; color: var(--text); }
+    p:last-child { margin-bottom: 0; }
+
+    /* ── Hero ── */
+    .hero {
+      background: var(--navy);
+      color: var(--white);
+      padding: 5rem 0 4.5rem;
+    }
+    .hero .eyebrow {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #a8c4f0;
+      margin-bottom: 1rem;
+    }
+    .hero h1 { color: var(--white); margin-bottom: 1.2rem; }
+    .hero .subtitle {
+      font-size: 1.15rem;
+      color: #c8daf5;
+      max-width: 560px;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .hero-meta-item {
+      font-size: 14px;
+      color: #a8c4f0;
+    }
+    .hero-meta-item strong { color: var(--white); display: block; font-size: 15px; }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--amber);
+      color: var(--white);
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: var(--radius);
+      font-weight: 700;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+    .btn-primary:hover { background: #b87d08; text-decoration: none; }
+
+    .deadline-note {
+      margin-top: 1rem;
+      font-size: 14px;
+      color: #a8c4f0;
+    }
+
+    /* ── Callout box ── */
+    .callout {
+      background: var(--amber-light);
+      border-left: 4px solid var(--amber);
+      padding: 1.2rem 1.4rem;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      margin: 1.5rem 0;
+    }
+    .callout p { color: var(--text); margin: 0; }
+
+    /* ── Prework banner ── */
+    .prework-banner {
+      background: #1a3a7a;
+      border: 1px solid #2a5ab0;
+      border-radius: var(--radius);
+      padding: 1.2rem 1.4rem;
+      margin: 1.5rem 0;
+    }
+    .prework-banner p { color: #c8daf5; margin: 0; font-size: 15px; }
+    .prework-banner strong { color: var(--white); }
+
+    /* ── Who it's for ── */
+    .criteria-list {
+      list-style: none;
+      padding: 0;
+      margin: 1.2rem 0;
+    }
+    .criteria-list li {
+      padding: 0.7rem 0;
+      border-bottom: 1px solid var(--border);
+      padding-left: 1.5rem;
+      position: relative;
+      color: var(--text);
+    }
+    .criteria-list li:last-child { border-bottom: none; }
+    .criteria-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--amber);
+      font-weight: 700;
+    }
+    .criteria-list li.no::before {
+      content: "✗";
+      color: #c0392b;
+    }
+    .criteria-list li.required::before {
+      content: "!";
+      color: var(--amber);
+      font-weight: 900;
+    }
+
+    /* ── Sessions ── */
+    .session-list { margin-top: 1.5rem; }
+    .session-item {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+      align-items: start;
+    }
+    .session-item:last-child { border-bottom: none; }
+    .session-date {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+      padding-top: 2px;
+    }
+    .session-prework {
+      background: var(--amber-light);
+      border-left: 3px solid var(--amber);
+      padding: 0.9rem 1.1rem;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      margin-bottom: 0.75rem;
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 1rem;
+      align-items: start;
+    }
+    .session-prework-label {
+      font-size: 13px;
+      font-weight: 700;
+      color: #8a5e00;
+      padding-top: 2px;
+    }
+
+    /* ── FAQ ── */
+    .faq-item { margin-bottom: 2rem; }
+
+    /* ── Instructor ── */
+    .instructor-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.8rem;
+      margin-top: 1.2rem;
+    }
+    .instructor-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+
+    /* ── Final CTA ── */
+    .final-cta {
+      background: var(--navy);
+      color: var(--white);
+      text-align: center;
+      padding: 5rem 0;
+    }
+    .final-cta h2 { color: var(--white); }
+    .final-cta p { color: #c8daf5; max-width: 480px; margin: 0 auto 2rem; }
+    .final-cta .deadline-note { color: #a8c4f0; margin-top: 1rem; font-size: 14px; }
+
+    /* ── Footer ── */
+    footer {
+      background: #111;
+      color: #888;
+      text-align: center;
+      padding: 2rem 1.5rem;
+      font-size: 13px;
+    }
+    footer a { color: #aaa; }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      h1 { font-size: 1.8rem; }
+      .hero-meta { gap: 1rem; }
+      .session-item { grid-template-columns: 1fr; gap: 0.2rem; }
+      .session-prework { grid-template-columns: 1fr; gap: 0.2rem; }
+      .session-date { font-size: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════════════════════════════
+     CONFIGURATION — edit these values to update all dates on the page
+     Months are 0-indexed: January = 0, September = 8, December = 11
+     ════════════════════════════════════════════════════════════════════ -->
+<script>
+window.COURSE_CONFIG = {
+  firstSession:        new Date(2026, 8, 10),  // YY MM DD
+  applicationDeadline: new Date(2026, 7, 31),  
+  notificationDate:    new Date(2026, 8, 3),  
+  sessionStart:        "18:00",
+  sessionEnd:          "20:00",
+  timezone:            "CET",
+};
+</script>
+
+<!-- Nav -->
+<nav>
+  <a class="nav-logo" href="#">Startup Foundations for university graduates, students, and dropouts — Intensive</a>
+  <a class="nav-cta" href="#apply" id="nav-cta">Apply</a>
+</nav>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="container">
+    <p class="eyebrow" id="hero-eyebrow">Free · Online · 5-Session Intensive</p>
+    <h1>Build a startup.<br>Five weeks. Ten hours.</h1>
+    <p class="subtitle" id="hero-subtitle">
+      A free 10-hour sprint for university graduates, students, and dropouts — from customer interviews to a draft YC application, 
+      in five consecutive Thursday sessions  
+    </p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <strong id="hero-schedule-strong">Thursday · 18:00–20:00 CET</strong>
+        <span id="hero-schedule-start">September 10 – October 8, 2026</span>
+        <span id="hero-schedule-additional">additional Editions of the workshop may be held in the future depending on collected interest</span>
+      </div>
+      <div class="hero-meta-item">
+        <strong>5 sessions · 10 hours</strong>
+        Online synchronous 
+      </div>
+      <div class="hero-meta-item">
+        <strong>10 places (8 participants minimum)</strong>
+        · free · no equity ask
+      </div>
+    </div>
+    <a class="btn-primary" href="#apply">Apply now</a>
+    <p class="deadline-note" id="hero-deadline">Applications close August 31, 2026</p>
+  </div>
+</div>
+
+<!-- What this is -->
+<section>
+  <div class="container">
+    <h2>What this course is</h2>
+    <p>
+      Startup Foundations for university graduates, students, and dropouts is a free online intensive and interactive workshop
+      covering customer discovery, minimum viable product, what YC looks for, while you write a draft accelerator application
+      for your startup idea in five consecutive sessions. 
+    </p>
+    <p>
+    <strong>Application is restricted to applicants being at least 21 years old.</strong> 
+      No minor can apply or attend. The minimum age limit for applying is set to the maximum value between the values stated by you nationality and residency countries.
+    </p>
+    <p>
+      The workshop follows Paul Graham's and YC's startup creation philosophy at the idea/seed stage. 
+      The format is designed for university graduates, students, and dropouts who want a structured sprint to a draft YC application.
+      The workshop sessions are not a series of academic lectures, they require instead your active participation doing 
+      the pre-session assignments and sharing ideas with the other participants during the session while at the same time
+      polishing your startup idea and application. 
+      <strong>The workshop working language is English.</strong>
+      <strong>Application is restricted to applicants being at least 21 years old.</strong> No minor can apply or attend. 
+      The minimum age limit is set to the maximum value between your nationality and residency countries.
+    </p>
+    <p>
+      The course is free. There is no equity ask, no upsell, and no commercial angle for participants.
+    </p>
+    <strong>
+      There is no point in attending a session unless, one has completed the pre-session assignment.
+      Therefore completion of the given assignments is required to attend the following session. 
+      Another requirement is one's active participation during the session.
+      You will be excluded from the remaining sessions if you cannot keep up with completing the assignments or 
+      with showing an active participation during the sessions.
+    </strong>
+  </div>
+</section>
+
+<!-- Who it's for -->
+<section>
+  <div class="container">
+    <h2>Who it is for</h2>
+    <ul class="criteria-list">
+      <li>You are above the legal age for your nationality and residency country.
+          You are a university graduate, undergraduates or dropout. However, you have attended at least 1 year of university study.
+      </li>
+      <li>You already decided that you want to create a startup and you have an idea to explore by interacting with potential customers.</li>
+      <li id="criteria-schedule">You can attend Thursdays 18:00–20:00 CET for five consecutive weeks from September 10</li>
+      <li>Completing three customer discovery interviews before Session 1 is required for attending Session 1. 
+        Admitted applicants will receive a guide on how to conduct the interviews. </li>
+      <li>Completing the tasks assigned at the end of each session is a requirement for attention the following session.</li>
+      <li class="no">You do not need technical co-founders, a business plan, or prior business experience</li>
+      <li class="no">The course is not focused toward applying to European incubators as they are passionate about formal documentation 
+        over helping with finding product market fit. </li>
+    </ul>
+  </div>
+</section>
+
+<!-- Sessions -->
+<section>
+  <div class="container">
+    <h2>The five sessions</h2>
+    <p>Each session runs about two hours and involves an active participation. Every session ends with an assignment 
+      that feeds directly into the next one. There are no off weeks — the course runs five consecutive Thursday</p>
+
+    <div class="session-list">
+
+      <div class="session-prework">
+        <span class="session-prework-label" id="prework-label">Sep 4–9<br>Pre-work</span>
+        <div>
+          <h3 style="color:#8a5e00;">Do Three customer discovery interviews</h3>
+          <p style="font-size:15px; color:#8a5e00; margin:0; opacity:0.85;">Conduct three 20 minute interviews with people that you identify as potential customers. 
+            Follow the guide provided after acceptance.  
+            Bring your notes to Session 1 — the first 30 minutes of Session 1 are built around what the participants heard.</p>
+        </div>
+      </div>
+
+      <div class="session-item">
+        <span class="session-date" id="session-date-1">Sep 10</span>
+        <div>
+          <h3>Session 1 — The Founder Mindset</h3>
+          <p style="font-size:15px; color:var(--muted); margin:0;">Mindset of a Founder · Interview debrief: what the participants heard across 30 interviews · Name your idea in 50 characters</p>
+        </div>
+      </div>
+
+      <div class="session-item">
+        <span class="session-date" id="session-date-2">Sep 17</span>
+        <div>
+          <h3>Session 2 — What the Market Actually Said</h3>
+          <p style="font-size:15px; color:var(--muted); margin:0;">Persist, pivot, or kill — group decisions · The Mom Test: how to run interviews 
+            that produce real data · Do Things That Don't Scale: the manual-first principle · Finding your first 10 users via referral chain</p>
+        </div>
+      </div>
+
+      <div class="session-item">
+        <span class="session-date" id="session-date-3">Sep 24</span>
+        <div>
+          <h3>Session 3 — Build the Minimum, Find the Users</h3>
+          <p style="font-size:15px; color:var(--muted); margin:0;">What an MVP actually is (concierge, Wizard of Oz) · What traction looks 
+            like before you have a product · What YC actually weights and in what order · Founder-market fit</p>
+        </div>
+      </div>
+
+      <div class="session-item">
+        <span class="session-date" id="session-date-4">Oct 1</span>
+        <div>
+          <h3>Session 4 — Write the Application</h3>
+          <p style="font-size:15px; color:var(--muted); margin:0;">Storytelling for founders: narrative arc · YC application questions decoded · 
+            Live writing workshop: rewrite your weakest answer in session</p>
+        </div>
+      </div>
+
+      <div class="session-item">
+        <span class="session-date" id="session-date-5">Oct 8</span>
+        <div>
+          <h3>Session 5 — The Interview</h3>
+          <p style="font-size:15px; color:var(--muted); margin:0;">Mock YC interviews — 10 minutes per direction in breakout pairs · Full group debrief: what landed, what did not · What happens next</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Instructor -->
+<section>
+  <div class="container">
+    <h2>About the instructor</h2>
+    <div class="instructor-card">
+      <p class="instructor-label">Your instructor</p>
+      <p>
+        The course is organized and taught by Filippo Neri (<a href="mailto:filippo.neri.email@gmail.com">filippo.neri.email@gmail.com</a>). I am a researcher in computer science (Machine learning / AI) since 1997, working in the Italian academic system 
+        with stints abroad in academic and industrial R&D centres. 
+        After a PhD in Computer Science, I gained an MBA with major on Entrepreneurship and Technology Innovation. 
+      </p>
+      <p>
+        I held a Marie Curie fellowship from 2000 to 2002 in artificial intelligence — building software agents to model customer behavior. 
+        After my fellowship, I became curious about Silicon Valley and applied to YC. I was not accepted. In 2016 I started a company in Italy using my personal savings. 
+        It did not find product market fit and eventually closed.
+      </p>
+      <p>
+        I built this course because I went through the process without any of the preparation it teaches. The mistakes I made are well-documented. The course is what I would have needed before I applied.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="container">
+    <h2>Frequently asked questions</h2>
+    <div class="faq-item">
+      <h3>What if I have not done any customer interviews before?</h3>
+      <p>That is fine. The pre-work guide walks you through how to ask for an interview, what questions to ask, and what to listen for. The Mom Test principle — ask about their life, not your idea — is simple enough to apply on your first attempt. Most people find their first interview easier than they expected.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Is there an equity or fee requirement?</h3>
+      <p>No. The course is free. There is no equity ask and no fee. You will not be asked to join any program, fund, or organization as a condition of participating.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Do I need a startup idea to apply?</h3>
+      <p>Yes, you do; you need to know what you want to focus on and use your time and energy to achieve it, as well as what your incubator application will be about. 
+        However, it is not necessary to have a fully polished idea. The pre-work interviews are designed to help you find or sharpen the startup idea 
+        before Session 1. </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>What if I do not complete the assignments given before a session? what if I miss a session? 
+        What if I do not feel like to actively participate in the session conversation? What if my English is not good enough?</h3>
+      <p id="faq-miss">In this case, you will be excluded from attending the remaining sessions. 
+        Each assignment and each sesssion feeds directly into the next ones, 
+        and their completion is needed in order to refine your startup concept and incubator application.
+        If your schedule does not allow you to commit the time and effort for attending the workshop, please do not apply.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Is this only for Founders who want to apply to YC specifically?</h3>
+      <p>No. The YC application is the course's structured output — a concrete artifact that forces clear thinking about your company. You can apply to YC, to another accelerator, 
+        or to nothing at all. The application is a tool for sharpening your thinking, not a commitment to any particular path.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>I graduated or left my university course a long time ago. Can I still apply?</h3>
+      <p>Yes, there is no upper limit. Though, before applying, I suggest that you search on the Internet and have a look to the photos of teams admitted to YC. </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>What time zone is 18:00–20:00 CET?</h3>
+      <p>18:00–20:00 Central European Time is 12:00–14:00 US Eastern Time, and 09:00–11:00 US Pacific Time. The course is EU-primary in its scheduling. US-based participants on the East Coast can join; West Coast participants will need to join at 9am local time.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>I was not selected. What happens to my application?</h3>
+      <p>You can reapply to a future edition if you like. </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>I am interested in participating in the course but at a future date, how could I do that?</h3>
+      <p>Send an email to the course organizer with your interest in attending a future edition of the course.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="final-cta" id="apply">
+  <div class="container">
+    <h2>Apply to Startup Foundations </h2>
+    <p id="cta-desc">Free · 10 hours · 5 weekly sessions · Thursdays 18:00–20:00 CET · September 10 – October 8, 2026</p>
+    <a class="btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfMJ2jlsc1kaZhWMe8p7QUtJUUH0N1PiLAzAAN8MEJ_fn068g/viewform" >Start your application</a>
+    <p class="deadline-note" id="cta-deadline">Applications close August 31, 2026 · 10 places · Notifications by September 4</p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p id="footer-cohort">Startup Foundations for university graduates, students, and dropouts - 5 Session Intensive · September–October 2026</p>
+</footer>
+
+<script>
+(function () {
+  var cfg = window.COURSE_CONFIG;
+  var MONTHS = ["January","February","March","April","May","June",
+                "July","August","September","October","November","December"];
+  var SHORT  = ["Jan","Feb","Mar","Apr","May","Jun",
+                "Jul","Aug","Sep","Oct","Nov","Dec"];
+  var DAYS   = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
+  function addDays(d, n) { var r = new Date(d); r.setDate(r.getDate() + n); return r; }
+  function fmtLong(d)      { return MONTHS[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear(); }
+  function fmtShort(d)     { return SHORT[d.getMonth()] + " " + d.getDate(); }
+  function fmtMonthDay(d)  { return MONTHS[d.getMonth()] + " " + d.getDate(); }
+  function fmtMonthYear(d) { return MONTHS[d.getMonth()] + " " + d.getFullYear(); }
+  function fmtShortRange(a, b) {
+    if (a.getMonth() === b.getMonth() && a.getFullYear() === b.getFullYear()) {
+      return SHORT[a.getMonth()] + " " + a.getDate() + "–" + b.getDate();
+    }
+    return fmtShort(a) + " – " + fmtShort(b);
+  }
+  function fmtLongRange(a, b) {
+    if (a.getFullYear() === b.getFullYear()) {
+      if (a.getMonth() === b.getMonth()) {
+        return MONTHS[a.getMonth()] + " " + a.getDate() + "–" + b.getDate() + ", " + a.getFullYear();
+      }
+      return MONTHS[a.getMonth()] + " " + a.getDate() + " – " + MONTHS[b.getMonth()] + " " + b.getDate() + ", " + a.getFullYear();
+    }
+    return fmtLong(a) + " – " + fmtLong(b);
+  }
+  function fmtRange(a, b) {
+    if (a.getFullYear() !== b.getFullYear()) {
+      return MONTHS[a.getMonth()] + " " + a.getFullYear() + "–" + MONTHS[b.getMonth()] + " " + b.getFullYear();
+    }
+    if (a.getMonth() !== b.getMonth()) {
+      return MONTHS[a.getMonth()] + "–" + MONTHS[b.getMonth()] + " " + a.getFullYear();
+    }
+    return fmtMonthYear(a);
+  }
+  function set(id, text) { var el = document.getElementById(id); if (el) el.textContent = text; }
+
+  var d1   = cfg.firstSession;
+  var dl   = cfg.applicationDeadline;
+  var nt   = cfg.notificationDate;
+  var ts   = cfg.sessionStart + "–" + cfg.sessionEnd + " " + cfg.timezone;
+  var day  = DAYS[d1.getDay()];
+  var days = day + "s";
+
+  // 5 consecutive weekly sessions
+  var s = [null,
+    d1,
+    addDays(d1,  7),
+    addDays(d1, 14),
+    addDays(d1, 21),
+    addDays(d1, 28)
+  ];
+
+  // Pre-work window: 6 days before Session 1 through the day before
+  var pw0 = addDays(d1, -6);
+  var pw1 = addDays(d1, -1);
+
+  document.title = "Startup Foundations for university graduates, students, and dropouts · " + fmtMonthYear(d1);
+  document.getElementById("page-meta").content =
+    "A free 10-hour intensive for university graduates, students, and dropouts. Five weekly sessions. One draft YC (Y Combinator) application. " +
+    days + " " + ts + ", " + fmtLongRange(d1, s[5]) + ". ";
+
+  set("nav-cta",    "Apply — closes " + fmtShort(dl));
+  set("hero-eyebrow", "Free · Online · 5-Session Intensive · " + fmtRange(d1, s[5]));
+  set("hero-subtitle",
+      "A free 10-hour sprint for university graduates, students, and dropouts — from customer interviews to a draft YC (Y Combinator) application, in five consecutive " + day + " sessions.");
+  set("hero-schedule-strong", days + " · " + ts);
+  set("hero-schedule-start",  fmtLongRange(d1, s[5]));
+  set("hero-deadline",        "Applications close " + fmtLong(dl));
+  set("criteria-schedule",
+      "You can attend " + days + " " + ts + " for five consecutive weeks from " + fmtShort(d1));
+
+  // Prework label contains a <br>, so use innerHTML
+  var pwEl = document.getElementById("prework-label");
+  if (pwEl) pwEl.innerHTML = fmtShortRange(pw0, pw1) + "<br>Pre-work";
+
+  for (var i = 1; i <= 5; i++) set("session-date-" + i, fmtShort(s[i]));
+
+  set("faq-miss",
+      "In this case, you will be excluded from attending the remaining sessions. " +
+      "Each assignment and each session feeds directly into the next ones, " +
+      "and are required in order to refine your startup concept and incubator application. " +
+      "If your schedule does not allow you to commit the time and effort for attending the workshop, please do not apply.");
+
+  set("cta-desc",
+      "Free · 10 hours · 5 weekly sessions · " + days + " " + ts + " · " + fmtLongRange(d1, s[5]));
+  set("cta-deadline",
+      "Applications close " + fmtLong(dl) + " · 10 places (8 participants minimun) · Notifications by " + fmtShort(nt));
+  set("footer-cohort",
+      "Startup Foundations for university graduates, students, and dropouts · 5-Session Intensive · " + fmtRange(d1, s[5]));
+})();
+</script>
+
+</body>
+</html>
